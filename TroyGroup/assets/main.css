@@ -3,6 +3,10 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'Julius Sans One', arial, sans-serif;
+  text-align: center;
+  max-width:  1400px;
+  margin: auto;
+  overflow-x:hidden;  
 }
 
 a {
@@ -18,11 +22,37 @@ ul {
   list-style-type: none;
   margin: 0px;
 }
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0px;
+}
+h2, h3,h4 {
+  font-size: 3em;
+}
+h1 {
+  font-size: 4em;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: red;
+  border: none;
+  transition: .2s;
+  font-family: 'Julius Sans One', arial, sans-serif;
+  font-weight: bold;
+}
+.btn:hover {
+background-color: darkred;
+}
 /*Header Styles*/
 .nav {
     height: 50px;
     width: 100%;
     padding-bottom: 50px;
+    background-color: white;
 }
 .nav ul {
   display: flex;
@@ -36,7 +66,7 @@ ul {
 
 }
 .links li {
-  line-height: 50px;
+  line-height: 100px;
   white-space: nowrap;
   margin: 0 20px;
 }
@@ -48,6 +78,40 @@ ul {
 }
 .logo img {
   width: 100%;
+}
+
+/*Landing Page Styles*/
+.head {
+  height: 100vh;
+  width: 100%;
+}
+.featured-image{
+  height: calc(100% - 50px);
+  width: 100%; 
+  background-image:url('assets/photos/cafe-image1.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+  background-size: 100%;
+}
+.featured-pages {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+  white-space: nowrap;
+  min-height: 500px;
+}
+.featured-pages .menu, .featured-pages .visit {
+  width: 50%;
+}
+.featured-pages .image {
+  height: 300px;
+  max-width: 450px;
+}
+.footer {
+  border-top: 10px solid red;
+  margin-top: 50px;
+  padding: 50px;
 }
 /*Responsive Resize*/
 @media(max-width: 800px) {
@@ -62,10 +126,24 @@ ul {
     flex-direction: column;
   }
   .nav {
-    max-height: 300px;
+    height: auto
   }
   .logo {
     position: relative;
     margin: auto;
+  }
+.links li {
+  line-height: 30px;
+}
+@media(max-width: 1200px) {
+  .featured-pages {
+    white-space: normal;
+    flex-direction: column;
+    height: auto;
+    }
+  .featured-pages .menu, .featured-pages .visit {
+    width: 100%;
+  }
+  .featured-pages .image{
   }
 }
